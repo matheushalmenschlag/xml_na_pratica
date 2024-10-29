@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ODM xmlns="http://www.cdisc.org/ns/odm/v1.3" ODMVersion="1.3" FileType="Snapshot" FileOID="12345" CreationDateTime="2024-10-23T12:00:00">
+    <!-- Metadados -->
+    <Study OID="S123">
+        <GlobalVariables>
+            <StudyName>Estudo de Medicamento - Eventos Adversos</StudyName>
+            <StudyDescription>Estudo para avaliação dos eventos adversos associados ao medicamento XYZ</StudyDescription>
+            <ProtocolName>PROTOCOLO-XYZ-001</ProtocolName>
+        </GlobalVariables>
+        <MetaDataVersion OID="MDV001" Name="Versão 1.0" Description="Metadados do estudo de eventos adversos">
+            <!-- Definição dos domínios e variáveis SDTM -->
+            <ItemDef OID="AE.SPID" Name="Sujeito" DataType="text">
+                <Description>Sujeito do estudo</Description>
+            </ItemDef>
+            <ItemDef OID="AE.AEDECOD" Name="Evento Adverso" DataType="text">
+                <Description>Descrição do evento adverso</Description>
+            </ItemDef>
+            <ItemDef OID="AE.AETERM" Name="Termo Preferido" DataType="text">
+                <Description>Termo preferido para o evento adverso</Description>
+            </ItemDef>
+            <ItemDef OID="AE.AESER" Name="Gravidade" DataType="integer">
+                <Description>Gravidade do evento adverso</Description>
+                <RangeCheck SoftHard="Soft">
+                    <CheckValue>1</CheckValue>
+                    <CheckValue>2</CheckValue>
+                    <CheckValue>3</CheckValue>
+                    <CheckValue>4</CheckValue>
+                    <CheckValue>5</CheckValue>
+                </RangeCheck>
+            </ItemDef>
+            <ItemDef OID="AE.AESEV" Name="Severidade" DataType="text">
+                <Description>Severidade do evento adverso (leve, moderado, grave)</Description>
+            </ItemDef>
+            <ItemDef OID="AE.AEACN" Name="Ação Tomada" DataType="text">
+                <Description>Ação tomada em relação ao evento adverso</Description>
+            </ItemDef>
+            <ItemDef OID="AE.AEOUT" Name="Desfecho" DataType="text">
+                <Description>Desfecho do evento adverso</Description>
+            </ItemDef>
+        </MetaDataVersion>
+    </Study>
+
+    <!-- Dados do Estudo -->
+    <ClinicalData StudyOID="S123" MetaDataVersionOID="MDV001">
+        <!-- Dados do Paciente 1 -->
+        <SubjectData SubjectKey="101">
+            <StudyEventData StudyEventOID="AE" StudyEventRepeatKey="1">
+                <FormData FormOID="AE">
+                    <ItemGroupData ItemGroupOID="AE" ItemGroupRepeatKey="1">
+                        <ItemData ItemOID="AE.SPID" Value="101"/>
+                        <ItemData ItemOID="AE.AEDECOD" Value="Dor de Cabeça"/>
+                        <ItemData ItemOID="AE.AETERM" Value="Cefaleia"/>
+                        <ItemData ItemOID="AE.AESER" Value="2"/>
+                        <ItemData ItemOID="AE.AESEV" Value="Moderado"/>
+                        <ItemData ItemOID="AE.AEACN" Value="Tratamento com analgésico"/>
+                        <ItemData ItemOID="AE.AEOUT" Value="Recuperado"/>
+                    </ItemGroupData>
+                    <ItemGroupData ItemGroupOID="AE" ItemGroupRepeatKey="2">
+                        <ItemData ItemOID="AE.SPID" Value="101"/>
+                        <ItemData ItemOID="AE.AEDECOD" Value="Náusea"/>
+                        <ItemData ItemOID="AE.AETERM" Value="Náusea"/>
+                        <ItemData ItemOID="AE.AESER" Value="3"/>
+                        <ItemData ItemOID="AE.AESEV" Value="Grave"/>
+                        <ItemData ItemOID="AE.AEACN" Value="Interrompido medicamento"/>
+                        <ItemData ItemOID="AE.AEOUT" Value="Recuperado"/>
+                    </ItemGroupData>
+                    <ItemGroupData ItemGroupOID="AE" ItemGroupRepeatKey="3">
+                        <ItemData ItemOID="AE.SPID" Value="101"/>
+                        <ItemData ItemOID="AE.AEDECOD" Value="Tontura"/>
+                        <ItemData ItemOID="AE.AETERM" Value="Tontura"/>
+                        <ItemData ItemOID="AE.AESER" Value="1"/>
+                        <ItemData ItemOID="AE.AESEV" Value="Leve"/>
+                        <ItemData ItemOID="AE.AEACN" Value="Nenhuma"/>
+                        <ItemData ItemOID="AE.AEOUT" Value="Em recuperação"/>
+                    </ItemGroupData>
+                </FormData>
+            </StudyEventData>
+        </SubjectData>
+
+        <!-- Dados do Paciente 2 -->
+        <SubjectData SubjectKey="102">
+            <StudyEventData StudyEventOID="AE" StudyEventRepeatKey="1">
+                <FormData FormOID="AE">
+                    <ItemGroupData ItemGroupOID="AE" ItemGroupRepeatKey="1">
+                        <ItemData ItemOID="AE.SPID" Value="102"/>
+                        <ItemData ItemOID="AE.AEDECOD" Value="Fadiga"/>
+                        <ItemData ItemOID="AE.AETERM" Value="Cansaço"/>
+                        <ItemData ItemOID="AE.AESER" Value="2"/>
+                        <ItemData ItemOID="AE.AESEV" Value="Moderado"/>
+                        <ItemData ItemOID="AE.AEACN" Value="Descanso"/>
+                        <ItemData ItemOID="AE.AEOUT" Value="Recuperado"/>
+                    </ItemGroupData>
+                    <ItemGroupData ItemGroupOID="AE" ItemGroupRepeatKey="2">
+                        <ItemData ItemOID="AE.SPID" Value="102"/>
+                        <ItemData ItemOID="AE.AEDECOD" Value="Febre"/>
+                        <ItemData ItemOID="AE.AETERM" Value="Febre"/>
+                        <ItemData ItemOID="AE.AESER" Value="3"/>
+                        <ItemData ItemOID="AE.AESEV" Value="Grave"/>
+                        <ItemData ItemOID="AE.AEACN" Value="Antipirético administrado"/>
+                        <ItemData ItemOID="AE.AEOUT" Value="Em recuperação"/>
+                    </ItemGroupData>
+                    <ItemGroupData ItemGroupOID="AE" ItemGroupRepeatKey="3">
+                        <ItemData ItemOID="AE.SPID" Value="102"/>
+                        <ItemData ItemOID="AE.AEDECOD" Value="Erupção cutânea"/>
+                        <ItemData ItemOID="AE.AETERM" Value="Erupção cutânea"/>
+                        <ItemData ItemOID="AE.AESER" Value="2"/>
+                        <ItemData ItemOID="AE.AESEV" Value="Moderado"/>
+                        <ItemData ItemOID="AE.AEACN" Value="Pomada aplicada"/>
+                        <ItemData ItemOID="AE.AEOUT" Value="Recuperado"/>
+                    </ItemGroupData>
+                </FormData>
+            </StudyEventData>
+        </SubjectData>
+
+        <!-- Dados do Paciente 3 -->
+        <SubjectData SubjectKey="103">
+            <StudyEventData StudyEventOID="AE" StudyEventRepeatKey="1">
+                <FormData FormOID="AE">
+                    <ItemGroupData ItemGroupOID="AE" ItemGroupRepeatKey="1">
+                        <ItemData ItemOID="AE.SPID" Value="103"/>
+                        <ItemData ItemOID="AE.AEDECOD" Value="Palpitações"/>
+                        <ItemData ItemOID="AE.AETERM" Value="Palpitações"/>
+                        <ItemData ItemOID="AE.AESER" Value="3"/>
+                        <ItemData ItemOID="AE.AESEV" Value="Grave"/>
+                        <ItemData ItemOID="AE.AEACN" Value="ECG realizado"/>
+                        <ItemData ItemOID="AE.AEOUT" Value="Em recuperação"/>
+                    </ItemGroupData>
+                    <ItemGroupData ItemGroupOID="AE" ItemGroupRepeatKey="2">
+                        <ItemData ItemOID="AE.SPID" Value="103"/>
+                        <ItemData ItemOID="AE.AEDECOD" Value="Dor no peito"/>
+                        <ItemData ItemOID="AE.AETERM" Value="Angina"/>
+                        <ItemData ItemOID="AE.AESER" Value="4"/>
+                        <ItemData ItemOID="AE.AESEV" Value="Grave"/>
+                        <ItemData ItemOID="AE.AEACN" Value="Hospitalização"/>
+                        <ItemData ItemOID="AE.AEOUT" Value="Em recuperação"/>
+                    </ItemGroupData>
+                    <ItemGroupData ItemGroupOID="AE" ItemGroupRepeatKey="3">
+                        <ItemData ItemOID="AE.SPID" Value="103"/>
+                        <ItemData ItemOID="AE.AEDECOD" Value="Tosse"/>
+                        <ItemData ItemOID="AE.AETERM" Value="Tosse seca"/>
+                        <ItemData ItemOID="AE.AESER" Value="2"/>
+                        <ItemData ItemOID="AE.AESEV" Value="Moderado"/>
+                        <ItemData ItemOID="AE.AEACN" Value="Xarope administrado"/>
+                        <ItemData ItemOID="AE.AEOUT" Value="Recuperado"/>
+                    </ItemGroupData>
+                </FormData>
+            </StudyEventData>
+        </SubjectData>
+
+        <!-- Dados do Paciente 4 -->
+        <SubjectData SubjectKey="104">
+            <StudyEventData StudyEventOID="AE" StudyEventRepeatKey="1">
+                <FormData FormOID="AE">
+                    <ItemGroupData ItemGroupOID="AE" ItemGroupRepeatKey="1">
+                        <ItemData ItemOID="AE.SPID" Value="104"/>
+                        <ItemData ItemOID="AE.AEDECOD" Value="Dor nas costas"/>
+                        <ItemData ItemOID="AE.AETERM" Value="Lombalgia"/>
+                        <ItemData ItemOID="AE.AESER" Value="3"/>
+                        <ItemData ItemOID="AE.AESEV" Value="Grave"/>
+                        <ItemData ItemOID="AE.AEACN" Value="Fisioterapia"/>
+                        <ItemData ItemOID="AE.AEOUT" Value="Em recuperação"/>
+                    </ItemGroupData>
+                    <ItemGroupData ItemGroupOID="AE" ItemGroupRepeatKey="2">
+                        <ItemData ItemOID="AE.SPID" Value="104"/>
+                        <ItemData ItemOID="AE.AEDECOD" Value="Cãibra muscular"/>
+                        <ItemData ItemOID="AE.AETERM" Value="Cãibra"/>
+                        <ItemData ItemOID="AE.AESER" Value="2"/>
+                        <ItemData ItemOID="AE.AESEV" Value="Moderado"/>
+                        <ItemData ItemOID="AE.AEACN" Value="Massagem local"/>
+                        <ItemData ItemOID="AE.AEOUT" Value="Recuperado"/>
+                    </ItemGroupData>
+                    <ItemGroupData ItemGroupOID="AE" ItemGroupRepeatKey="3">
+                        <ItemData ItemOID="AE.SPID" Value="104"/>
+                        <ItemData ItemOID="AE.AEDECOD" Value="Tontura"/>
+                        <ItemData ItemOID="AE.AETERM" Value="Vertigem"/>
+                        <ItemData ItemOID="AE.AESER" Value="2"/>
+                        <ItemData ItemOID="AE.AESEV" Value="Moderado"/>
+                        <ItemData ItemOID="AE.AEACN" Value="Acompanhamento clínico"/>
+                        <ItemData ItemOID="AE.AEOUT" Value="Recuperado"/>
+                    </ItemGroupData>
+                </FormData>
+            </StudyEventData>
+        </SubjectData>
+    </ClinicalData>
+</ODM>
